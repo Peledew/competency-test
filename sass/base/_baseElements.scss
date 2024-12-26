@@ -1,0 +1,12 @@
+@use '../base/variables' as *;
+
+body{
+    background-color: $primary-color;
+}
+
+.test{
+    background-color: rgb(221, 250, 5);
+    height: 300px;
+    width: 100%;
+    border: 3px solid red;
+}

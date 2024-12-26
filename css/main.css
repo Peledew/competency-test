@@ -1,3 +1,14 @@
+body {
+  background-color: #FFFFFF;
+}
+
+.test {
+  background-color: rgb(221, 250, 5);
+  height: 300px;
+  width: 100%;
+  border: 3px solid red;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,18 +16,7 @@
 }
 
 body {
-  font-family: "Arial, sans-serif";
-  background-color: #3498db;
-  color: #cccccc;
-}
-
-header {
-  background-color: #2ecc71;
-  padding: 1rem;
-}
-header h1 {
-  font-size: 2rem;
-  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -398,9 +398,20 @@ header h1 {
     width: 100%;
   }
 }
+header {
+  background-color: #f2a893;
+  padding: 1rem;
+}
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
 .button {
   background-color: rgb(16, 243, 84);
-  color: #3498db;
+  color: #FFFFFF;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -408,7 +419,7 @@ header h1 {
   transition: background-color 0.3s;
 }
 .button:hover {
-  background-color: #2ecc71;
+  background-color: #f2a893;
   color: white;
 }
 

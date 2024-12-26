@@ -1,6 +1,27 @@
 // Colors
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
+$primary-color: #FFFFFF;
+$secondary-color: #f2a893;
 
 // Fonts
-$font-stack: 'Arial, sans-serif';
+$primary-font: 'Montserrat', sans-serif;
+$secondary-font: 'Roboto Condensed', sans-serif;
+
+//Grid
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1200px, 
+);
+
+$grid-columns: 12;
+
+$grid-gaps: (
+  "0": 0,
+  "1": 10px,
+  "2": 20px,
+  "3": 30px,
+);
+
+$layout-values: flex-start, flex-end, center, space-between, space-around;
