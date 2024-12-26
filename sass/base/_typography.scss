@@ -1,0 +1,7 @@
+@use 'sass:color'; 
+@use '../base/variables' as *;
+body {
+  font-family: $font-stack;
+  background-color: $primary-color;
+  color: color.scale(#fff, $lightness: -20%);
+}
