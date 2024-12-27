@@ -1,6 +1,97 @@
-@use '../base/variables' as *;
+@use '../base/variables' as vars;
+@use '../base/colours' as colours;
+@use '../base/typography' as typo;
 
 header {
-  padding: 1rem;
-
+    padding: 5px;
+    background-color: rgb(36, 34, 34);
+    height: 500px;
 }
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;  // Align navigation items to the right
+  margin-left: auto;  // Pushes the nav-menu to the right
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  margin-left: 12px;
+  padding: 10px 20px;
+}
+ 
+.nav-item a {
+  @extend .cta-text;
+  text-decoration: none;
+  color: colours.$white;
+  padding: 18px;
+}
+
+.nav-item:hover a {
+  border-bottom: 1px solid colours.$bright-red;
+}
+
+/* Prevent border-bottom on hover for About Us */
+.nav-item.dropdown:hover a {
+  border-bottom: none;
+}
+
+
+/* Dropdown Styles */
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+  background-color: colours.$dark-gray;  // Add your desired background color
+  opacity: 0;
+  list-style-type: none;
+  width: 100%;
+
+  margin: 5px auto;
+  border: 1px solid colours.$medium-gray;
+
+  border-top: 1px solid colours.$bright-red;
+  z-index: 10;
+
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown-menu li {
+  padding: 15px 20px; // Uniform padding
+  border-bottom: 2px solid colours.$medium-gray;  // Light gray border between items
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;  // Remove border for the last item
+}
+
+
+.dropdown-menu a {
+  @extend .caption-text;
+  display: block;
+  color: colours.$white;
+  text-decoration: none;
+  padding: 0;
+}
+
+.dropdown-menu a:hover {
+  color: colours.$light-gray;
+}
+
+/* Show the dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
