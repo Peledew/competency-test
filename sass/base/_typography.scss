@@ -1,6 +1,103 @@
-@use 'sass:color'; 
-@use '../base/variables' as *;
+@use "sass:map";
+@use '../base/variables' as vars;
+@use '../base/colours' as colours;
 
 body {
-  font-family: $primary-font;
+  font-family: vars.$primary-font;
+  font-weight: vars.$secondary-font-weight;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+//Headings
+@each $tag, $values in vars.$heading-styles {
+  #{$tag} {
+    font-size: map.get($values, size);
+    line-height: map.get($values, line-height);
+    font-weight: vars.$primary-font-weight;
+    font-family: vars.$primary-font;
+  }
+}
+
+h2 {
+  letter-spacing: -0.02em;
+}
+
+//Other text
+.primary-text {
+  font-family: vars.$primary-font;
+  font-weight: vars.$secondary-font-weight;
+}
+
+.secondary-text {
+  font-family: vars.$secondary-font;
+  font-weight: vars.$secondary-font-weight;
+}
+
+.large-text {
+  @extend .primary-text;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.small-text {
+  @extend .primary-text;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.caption-text {
+  @extend .secondary-text;
+  font-size: 13px;
+  line-height: 15.23px;
+}
+
+.cta-text{
+  @extend .secondary-text;
+  font-size: 14px;
+  line-height: 16.41px;
+  letter-spacing: 0.07em;
+}
+
+.title{
+  @extend .secondary-text;
+  font-size: 12px;
+  line-height: 14.06px;
+  letter-spacing: 0.4em;
+}
+
+.text-dark-gray{
+  color: colours.$dark-gray;
+}
+
+.text-medium-gray{
+  color: colours.$medium-gray;
+}
+
+.text-light-gray{
+  color: colours.$light-gray;
+}
+
+.text-purple{
+  color: colours.$purple;
+}
+
+.text-bright-red{
+  color: colours.$bright-red;
+}
+
+.text-bright-blue{
+  color: colours.$bright-blue;
+}
+
+.text-white{
+  color: colours.$white;
+}
+
+.text-light-teal{
+  color: colours.$light-teal;
+}
+
+.text-dark-green{
+  color: colours.$dark-green;
 }

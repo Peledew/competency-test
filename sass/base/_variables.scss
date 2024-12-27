@@ -1,10 +1,24 @@
-// Colors
-$primary-color: #FFFFFF;
-$secondary-color: #f2a893;
+@use 'colours' as colours;
+
+// Colours
+$primary-color: colours.$white;
+$secondary-color: colours.$dark-gray;
 
 // Fonts
 $primary-font: 'Montserrat', sans-serif;
 $secondary-font: 'Roboto Condensed', sans-serif;
+
+//Typography
+$primary-font-weight: 700; // Bold
+$secondary-font-weight: 400; // Regular
+
+$heading-styles: (
+  "h1": (size: 48px, line-height: 58.51px),
+  "h2": (size: 40px, line-height: 48.76px),
+  "h3": (size: 28px, line-height: 34.13px),
+  "h4": (size: 20px, line-height: 24.38px),
+);
+
 
 //Grid
 $breakpoints: (
