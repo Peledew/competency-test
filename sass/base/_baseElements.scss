@@ -1,7 +1,9 @@
-@use '../base/variables' as *;
+@use '../base/variables' as vars;
+@use '../base/colours' as colours;
 
 body{
-    background-color: $primary-color;
+    background-color: vars.$primary-color;
+    color: colours.$dark-gray;
 }
 
 .test{

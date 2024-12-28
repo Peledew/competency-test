@@ -15,6 +15,10 @@
   flex-flow: row wrap;
 }
 
+.align-items-center{
+  align-items: center;
+}
+
 // Grid gaps
 @each $key, $val in vars.$grid-gaps {
     .gap-#{$key} > * {

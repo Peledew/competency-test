@@ -1,0 +1,43 @@
+// Base Margins
+$spacings: (
+  none: 0,
+  5: 5px,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+  25: 25px,
+  30: 30px,
+  35: 35px,
+  40: 40px,
+  45: 45px,
+  50: 50px,
+  55: 55px,
+  60: 60px,
+);
+
+// Generate Margin Classes
+@each $key, $value in $spacings {
+  .m-#{$key} {
+    margin: $value;
+  }
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}

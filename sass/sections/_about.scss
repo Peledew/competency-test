@@ -1,0 +1,15 @@
+.about{
+    margin: 105px 0;
+    position: relative;
+
+    .bg-image{
+        position: absolute;
+        left: 10%;
+        top: 0;
+        z-index: -1;
+    }
+
+    .text{
+        width: 453px;
+    }
+}
