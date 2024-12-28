@@ -779,6 +779,83 @@ header {
   box-sizing: border-box;
 }
 
+.filter-menu {
+  text-align: center;
+}
+.filter-menu .filter-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.filter-menu .filter-list .filter-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #9CA3B5;
+}
+.filter-menu .filter-list .filter-item.active {
+  border-bottom: 2px solid #FA2A2A;
+  color: #212121;
+}
+.filter-menu .filter-list .filter-item:hover {
+  color: #FA2A2A;
+}
+
+.car-card {
+  border: 1px solid rgba(156, 163, 181, 0.2);
+}
+.car-card .info {
+  display: grid;
+  justify-items: center;
+  padding: 20px 0;
+}
+.car-card .perks {
+  padding-left: 20px;
+}
+.car-card .buy-info {
+  padding: 20px;
+}
+.car-card .buy-button {
+  border-radius: 100px;
+  color: #FA2A2A;
+  background-color: rgba(250, 42, 42, 0.1019607843);
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 0px;
+  display: block;
+  margin-left: auto;
+}
+
+.checkmark {
+  padding-right: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .m-none {
   margin: 0;
 }
@@ -1167,6 +1244,126 @@ header {
 .my-60 {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+.m-65 {
+  margin: 65px;
+}
+
+.mt-65 {
+  margin-top: 65px;
+}
+
+.mr-65 {
+  margin-right: 65px;
+}
+
+.mb-65 {
+  margin-bottom: 65px;
+}
+
+.ml-65 {
+  margin-left: 65px;
+}
+
+.mx-65 {
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+.my-65 {
+  margin-top: 65px;
+  margin-bottom: 65px;
+}
+
+.m-70 {
+  margin: 70px;
+}
+
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mr-70 {
+  margin-right: 70px;
+}
+
+.mb-70 {
+  margin-bottom: 70px;
+}
+
+.ml-70 {
+  margin-left: 70px;
+}
+
+.mx-70 {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.my-70 {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.m-75 {
+  margin: 75px;
+}
+
+.mt-75 {
+  margin-top: 75px;
+}
+
+.mr-75 {
+  margin-right: 75px;
+}
+
+.mb-75 {
+  margin-bottom: 75px;
+}
+
+.ml-75 {
+  margin-left: 75px;
+}
+
+.mx-75 {
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+.my-75 {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.m-80 {
+  margin: 80px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mr-80 {
+  margin-right: 80px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.ml-80 {
+  margin-left: 80px;
+}
+
+.mx-80 {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.my-80 {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,90 @@
+@use '../base/colours' as colours;
+
+.filter-menu {
+    text-align: center;
+  
+    .filter-list {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      .filter-item {
+        padding: 10px 20px;
+        cursor: pointer;
+        color: colours.$light-gray;
+  
+        &.active {
+          border-bottom: 2px solid colours.$bright-red;
+          color: colours.$dark-gray;
+        }
+  
+        &:hover {
+          color: colours.$bright-red;
+        }
+      }
+    }
+  }
+  
+  .car-card{
+    border: 1px solid colours.$light-gray-a20;
+
+    .info{
+        display: grid;
+        justify-items: center;
+        padding: 20px 0;
+    }
+
+    .perks{
+        padding-left: 20px;
+    }
+
+    .buy-info{
+        padding: 20px;
+    }
+    
+    .buy-button{
+        border-radius: 100px;
+        color: colours.$bright-red;
+        background-color: colours.$bright-red-a10;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 0px;
+        display: block;
+        margin-left: auto;
+    }
+
+  }
+
+.checkmark{
+    padding-right: 10px;
+}
+  
+
+//Modal
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
