@@ -1,5 +1,6 @@
 @use "sass:map";
-@use "../base/variables" as vars;
+@use '../base/variables' as vars;
+@use '../base/colours' as colours;
 
 //Resposible design (GRID)
 @mixin xs {
@@ -38,3 +39,13 @@
   }
 }
 
+//Reusable container
+@mixin featured-attribute($width: 165px, $bg-color: colours.$white-a20, $border-color: colours.$light-gray) {
+  width: $width;
+  border: 1px solid $border-color;
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}

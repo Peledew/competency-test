@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as mixins;
+@use '../base/colours' as colours;
+
+
+.featured{
+    background: linear-gradient(to right, colours.$black, colours.$transparent-black), 
+              url('/img/featured-image.png') center/cover no-repeat;
+
+    
+    .content{
+        margin: 150px 0 100px 0;
+        width: 550px;
+    }
+
+}
+
+.featured-attribute {
+    @include mixins.featured-attribute(); 
+}
