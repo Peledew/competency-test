@@ -5,6 +5,8 @@
 $header-padding : 40px 60px;
 $max-width: 100%;
 
+//TODO: On hover na malom ekranu ne radi dobro kada se hoveruje about us
+
 header {
     padding: 5px;
     position: absolute;
@@ -37,18 +39,19 @@ header {
   position: relative;
   margin-left: 12px;
   padding: 10px 20px;
-}
- 
-.nav-item a {
-  @extend .cta-text;
-  text-decoration: none;
-  color: colours.$white;
-  padding: 18px;
+
+  a {
+    @extend .cta-text;
+    text-decoration: none;
+    color: colours.$white;
+    padding: 18px;
+
+    &:hover {
+      border-bottom: 1px solid colours.$bright-red;
+    }
+  }
 }
 
-.nav-item:hover a {
-  border-bottom: 1px solid colours.$bright-red;
-}
 
 /* Prevent border-bottom on hover for About Us */
 .nav-item.dropdown:hover a {
@@ -63,12 +66,13 @@ header {
   background-color: colours.$medium-gray;
   border: none;
   color: colours.$white;
+
+  &:hover{
+    background-color: colours.$bright-red;
+    cursor: pointer;
+  }
 }
 
-.nav-button:hover{
-  background-color: colours.$bright-red;
-  cursor: pointer;
-}
 /* Dropdown Styles */
 .dropdown-menu {
   display: block;

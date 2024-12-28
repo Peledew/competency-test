@@ -1,7 +1,6 @@
 .hero {
   position: relative;
   width: 100%;
-  padding: 80px 20px; // Padding for top and bottom
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +12,7 @@
   color: white;
   padding: 20px;
   text-align: center;
+  position: absolute;
 }
 
 .hero-slider {
@@ -21,9 +21,6 @@
   max-width: 100%;
   overflow: hidden;
   height: 720px;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .slider {
