@@ -1,7 +1,84 @@
-.hero{
-  min-height: 720px;
-  background-image: url('/img/bg-image.png'); 
-  background-size: cover;  
-  background-position: center;  
-  background-repeat: no-repeat; 
+.hero {
+  position: relative;
+  width: 100%;
+  padding: 80px 20px; // Padding for top and bottom
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-slider {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 720px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider {
+  display: flex;
+  width: calc(100% * 3);
+  transition: transform 0.5s ease;
+}
+
+.slider img {
+  width: 33.33%; // Ensure each image takes up half the slider container width
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+// button {
+//   background-color: rgba(0, 0, 0, 0.5);
+//   color: white;
+//   border: none;
+//   padding: 10px;
+//   cursor: pointer;
+//   font-size: 1.5rem;
+//   border-radius: 50%;
+//   transition: background-color 0.3s;
+// }
+
+// button:hover {
+//   background-color: rgba(0, 0, 0, 0.7);
+// }
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .hero-content {
+    flex: 1 1 100%; // Full width on small screens
+    text-align: center;
+  }
+
+  .hero-slider {
+    flex: 1 1 100%; // Full width on small screens
+  }
+
+  .slider img {
+    width: 100%; // Ensure images cover full width on smaller screens
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
 }

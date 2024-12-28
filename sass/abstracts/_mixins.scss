@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../base/variables" as vars;
 
+//Resposible design (GRID)
 @mixin xs {
   @media (min-width: map.get(vars.$breakpoints, "xs")) {
     @content;
@@ -36,3 +37,4 @@
     @content;
   }
 }
+

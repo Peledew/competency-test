@@ -2,10 +2,22 @@
 @use '../base/colours' as colours;
 @use '../base/typography' as typo;
 
+$header-padding : 40px 60px;
+$max-width: 100%;
+
 header {
     padding: 5px;
-    background-color: rgb(36, 34, 34);
-    height: 500px;
+    position: absolute;
+    width: $max-width;
+    padding: $header-padding;
+    z-index: 1;
+}
+
+/* Logo Styling */
+.logo {
+  img {
+    max-height: 50px;
+  } 
 }
 
 .nav-menu {
@@ -43,7 +55,20 @@ header {
   border-bottom: none;
 }
 
+//Nav Button
+.nav-button{
+  @extend .cta-text;
+  height: 50px;
+  width: 145px;
+  background-color: colours.$medium-gray;
+  border: none;
+  color: colours.$white;
+}
 
+.nav-button:hover{
+  background-color: colours.$bright-red;
+  cursor: pointer;
+}
 /* Dropdown Styles */
 .dropdown-menu {
   display: block;
@@ -54,7 +79,7 @@ header {
   background-color: colours.$dark-gray;  // Add your desired background color
   opacity: 0;
   list-style-type: none;
-  width: 100%;
+  width: $max-width;
 
   margin: 5px auto;
   border: 1px solid colours.$medium-gray;
@@ -67,14 +92,14 @@ header {
 }
 
 .dropdown-menu li {
-  padding: 15px 20px; // Uniform padding
-  border-bottom: 2px solid colours.$medium-gray;  // Light gray border between items
+  padding: 15px 0;
+  margin: 0 20px;
+  border-bottom: 2px solid colours.$medium-gray;
 }
 
 .dropdown-menu li:last-child {
   border-bottom: none;  // Remove border for the last item
 }
-
 
 .dropdown-menu a {
   @extend .caption-text;
@@ -95,3 +120,65 @@ header {
     transform: translateY(0);
 }
 
+/* Burger Menu Styling */
+.burger-menu {
+  display: none; // Hidden by default for larger screens
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  display: block;
+  height: 3px;
+  width: $max-width;
+  background-color: colours.$white;
+  border-radius: 2px;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .logo {
+    display: none; // Hide logo on small screens
+  }
+
+  .burger-menu {
+    display: flex; // Show burger menu on smaller screens
+  }
+
+  .nav-menu {
+    display: none; // Hide menu initially
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(36, 34, 34);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: $max-width;
+    padding: 10px 0;
+    z-index: 100;
+  }
+
+  .nav-menu.active {
+    display: flex; 
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: $max-width;
+    text-align: center;
+  }
+
+  .nav-item {
+    width: $max-width;
+    padding: 15px 0; 
+    text-align: center;
+  }
+
+  .nav-item a {
+    width: $max-width;
+    display: block; // Ensure block-level layout for links
+  }
+}
