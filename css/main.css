@@ -749,16 +749,23 @@ header {
 }
 .about {
   margin: 105px 0;
-  position: relative;
 }
 .about .bg-image {
   position: absolute;
-  left: 18%;
-  top: 0;
+  left: 5vw;
+  top: -3vw;
+  height: 27vw;
+  width: 19vw;
   z-index: -1;
 }
 .about .text {
-  width: 453px;
+  width: 30rem;
+}
+.about .image-wrapper {
+  position: relative;
+}
+.about .main-image {
+  width: 29vw;
 }
 
 .featured {
@@ -801,14 +808,37 @@ header {
 .filter-menu .filter-list .filter-item:hover {
   color: #FA2A2A;
 }
+@media (max-width: 768px) {
+  .filter-menu .filter-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .filter-menu .filter-item {
+    padding: 8px 15px;
+  }
+}
 
 .car-card {
   border: 1px solid rgba(156, 163, 181, 0.2);
 }
 .car-card .info {
+  position: relative;
   display: grid;
   justify-items: center;
   padding: 20px 0;
+}
+.car-card .info .image-wrapper {
+  display: grid;
+  justify-items: center;
+  height: 100px;
+}
+.car-card .info .image-wrapper .car-image {
+  max-height: 100px;
+}
+.car-card .new-icon {
+  position: absolute;
+  left: 4%;
+  top: 5%;
 }
 .car-card .perks {
   padding-left: 20px;
@@ -816,7 +846,7 @@ header {
 .car-card .buy-info {
   padding: 20px;
 }
-.car-card .buy-button {
+.car-card .buy-now-button {
   border-radius: 100px;
   color: #FA2A2A;
   background-color: rgba(250, 42, 42, 0.1019607843);
@@ -834,26 +864,73 @@ header {
 .modal {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -100%);
+  background-color: #fff;
+  border-radius: 15px;
+  width: 90%;
+  position: relative;
   z-index: 1000;
-  padding: 20px;
 }
-
-.modal-content {
-  text-align: center;
+.modal .info {
+  height: 100%;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding: 60px 70px 40px 70px;
+  background-color: rgba(156, 163, 181, 0.2);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
-
-.close-button {
+.modal .new-icon {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  left: 20%;
+  top: 12%;
+}
+.modal .content {
+  padding: 30px;
+}
+.modal .form-item {
+  display: flex;
+  border-bottom: 2px solid rgba(156, 163, 181, 0.1019607843);
+  padding: 10px 10px;
+}
+.modal .form-item:last-child {
+  border-bottom: none;
+}
+.modal .form-item .price {
+  margin-left: auto;
+}
+.modal .buy-button {
+  padding: 15px 65px;
+  border-radius: 15px;
+  border: 0px;
+  background-color: #212121;
+  width: 90%;
+}
+.modal .close-button {
+  display: flex;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  border: 0px;
+  background-color: #212121;
   cursor: pointer;
-  font-size: 20px;
+  position: absolute;
+  top: -5%;
+  right: 0%;
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 33, 33, 0.8);
+  z-index: 999;
 }
 
 .m-none {
@@ -884,6 +961,36 @@ header {
 .my-none {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .m-5 {

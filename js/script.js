@@ -39,47 +39,48 @@ document.querySelectorAll('.filter-item').forEach(item => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.querySelector(".modal");
+  const backdrop = document.createElement("div");
+  backdrop.classList.add("modal-backdrop");
+  document.body.appendChild(backdrop);
 
-//Modal
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalTitle = document.getElementById('modal-title');
-  const modalPrice = document.getElementById('modal-price');
-  const modalPerks = document.getElementById('modal-perks');
-  const closeButton = document.querySelector('.close-button');
+  const buyNowButtons = document.querySelectorAll(".buy-now-button");
+  const closeModalButton = document.querySelector(".close-button");
+  const checkboxes = modal.querySelectorAll(".form-item input[type='checkbox']");
+  const buyButtonPrice = modal.querySelector(".buy-button h4");
 
-  // Open modal and populate data
-  document.querySelectorAll('.buy-button').forEach((button) => {
-    button.addEventListener('click', (event) => {
-      const card = event.target.closest('.car-card'); // Get the card
-      const title = card.dataset.title; // Extract data attributes
-      const price = card.dataset.price;
-      const perks = card.dataset.perks.split(','); // Convert perks to an array
-
-      // Populate modal
-      modalTitle.textContent = title;
-      modalPrice.textContent = `Price: ${price}`;
-      modalPerks.innerHTML = '';
-      perks.forEach((perk) => {
-        const li = document.createElement('li');
-        li.textContent = perk.trim();
-        modalPerks.appendChild(li);
+  // Open modal
+  buyNowButtons.forEach(button => {
+      button.addEventListener("click", () => {
+          modal.style.display = "block";
+          backdrop.style.display = "block";
       });
-
-      // Show modal
-      modal.style.display = 'block';
-    });
   });
 
   // Close modal
-  closeButton.addEventListener('click', () => {
-    modal.style.display = 'none';
+  closeModalButton.addEventListener("click", () => {
+      modal.style.display = "none";
+      backdrop.style.display = "none";
   });
 
-  // Close modal on outside click
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
+  backdrop.addEventListener("click", () => {
+      modal.style.display = "none";
+      backdrop.style.display = "none";
+  });
+
+  // Update price
+  const updatePrice = () => {
+      let total = 39999; // Base price
+      checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+              total += parseFloat(checkbox.value || 0);
+          }
+      });
+      buyButtonPrice.textContent = `${total.toFixed(2)} €`;
+  };
+
+  checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", updatePrice);
   });
 });

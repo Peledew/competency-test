@@ -25,15 +25,45 @@
         }
       }
     }
+
+    @media (max-width: 768px) {
+      .filter-list {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .filter-item {
+        padding: 8px 15px;
+      }
+    }
+
   }
   
   .car-card{
     border: 1px solid colours.$light-gray-a20;
 
     .info{
+        position: relative;
         display: grid;
         justify-items: center;
         padding: 20px 0;
+
+        .image-wrapper{
+          display: grid;
+          justify-items: center;
+          height: 100px;
+
+          .car-image{
+            max-height: 100px;
+          }
+        }
+    }
+
+    
+
+    .new-icon{
+        position: absolute;
+        left: 4%;
+        top:5%;
     }
 
     .perks{
@@ -44,7 +74,7 @@
         padding: 20px;
     }
     
-    .buy-button{
+    .buy-now-button{
         border-radius: 100px;
         color: colours.$bright-red;
         background-color: colours.$bright-red-a10;
@@ -60,31 +90,87 @@
 .checkmark{
     padding-right: 10px;
 }
-  
 
-//Modal
-.modal {
-    display: none;
+.modal{
+    display: none; 
     position: fixed;
-    top: 50%;
+    top: 0%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -100%);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 90%;
+    position: relative;
     z-index: 1000;
-    padding: 20px;
-  }
+
+    .info{
+        height: 100%;
+        position: relative;
+        display: grid;
+        justify-items: center;
+        padding: 60px 70px 40px 70px;
+        background-color: colours.$light-gray-a20;
+        border-top-left-radius: 15px;  
+        border-bottom-left-radius: 15px; 
+        
+    }
+
+    .new-icon{
+        position: absolute;
+        left: 20%;
+        top:12%;
+    }
+
+    .content{
+        padding: 30px;
+    }
+
+    .form-item{
+      display: flex;
+      border-bottom: 2px solid colours.$light-gray-a10;
+      padding: 10px 10px;
+
+      &:last-child {
+        border-bottom: none;
+    }
+
+
+      .price {
+        margin-left: auto;
+      }
+    }
+
+    .buy-button{
+      padding: 15px 65px;
+      border-radius: 15px;
+      border: 0px;
+      background-color: colours.$dark-gray;
+      width: 90%;
+    }
+
+    .close-button{
+      display: flex;
+      height: 42px;
+      width: 42px;
+      border-radius: 50%;
+      border: 0px;
+      background-color: colours.$dark-gray;
+      cursor: pointer;
+      position: absolute;
+      top: -5%;
+      right: 0%;
+    }
+
+}
   
-  .modal-content {
-    text-align: center;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
+// Backdrop for darkened background
+.modal-backdrop {
+  display: none; // Initially hidden
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #212121CC;
+  z-index: 999;
+}
