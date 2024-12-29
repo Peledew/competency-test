@@ -141,7 +141,7 @@ header {
 }
 
 /* Media Query for Mobile Screens */
-@media (max-width: 768px) {
+@media (max-width: vars.$breakpoint-lg) {
   .logo {
     display: none; // Hide logo on small screens
   }

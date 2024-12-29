@@ -49,3 +49,10 @@
   align-items: center;
   box-sizing: border-box;
 }
+
+// Mixin for Media Queries
+@mixin respond-to($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

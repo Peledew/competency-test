@@ -1,5 +1,6 @@
 @use '../base/colours' as colours;
 @use '../base//variables' as vars;
+@use '../abstracts/mixins' as mixin;
 
 .contact-us{
     background: 
@@ -13,16 +14,16 @@
         margin: 120px 0 0 150px;
         width: 30vw;
 
-        @media (max-width: 960px) { // Adjust to your breakpoint
+        @include mixin.respond-to(vars.$breakpoint-lg) {
           width:100%;
           margin: 50px 0 0 0px;
-      }
+        }
     }
 
     form{
         padding: 30px;
         margin-top:120px;
-        width: 24vw;
+        width: 480px;
         background: colours.$dark-green;
         .input-wrapper {
             position: relative;
@@ -40,6 +41,11 @@
             min-height: 60px;
             min-width: 360px;
             color: colours.$white;
+
+            @include mixin.respond-to(vars.$breakpoint-lg) {
+              min-width: 0;
+              width: 100%;
+            }
           }
 
           textarea{
@@ -60,10 +66,16 @@
             min-height: 50px;
             min-width: 360px;
             cursor: pointer;
+
+            @include mixin.respond-to(vars.$breakpoint-lg) {
+              min-width: 0;
+              width: 90%;
+              margin: 0;
+            }
           }
 
-          @media (max-width: 960px) { // Adjust to your breakpoint
-            width:100%;
+        @include mixin.respond-to(vars.$breakpoint-lg) {
+          width:100%;
         }
     }
 }

@@ -1,38 +1,50 @@
-.about{
-    margin: 6vw 0 10vw 0;
-    
-    .bg-image{
-        position: absolute;
-        left: 5vw;
-        top: -3vw;
-        height: 27vw;
-        width: 19vw;
-        z-index: -1;
+@use '../abstracts/mixins' as mixin;
+@use '../base/variables' as vars;
 
-        @media (max-width: 960px) { 
-            display: none;
-        }
+// Variables
+$text-width-lg: 26vw;
+$text-width-sm: 90%;
+$image-width-lg: 29vw;
+$image-width-sm: 80%;
+$bg-image-left: 5vw;
+$bg-image-top: -3vw;
+$bg-image-height: 27vw;
+$bg-image-width: 19vw;
+
+.about {
+  margin: 6vw 0 10vw 0;
+
+  .bg-image {
+    position: absolute;
+    left: $bg-image-left;
+    top: $bg-image-top;
+    height: $bg-image-height;
+    width: $bg-image-width;
+    z-index: -1;
+
+    // Hide background image for smaller screens
+    @include mixin.respond-to(vars.$breakpoint-lg) {
+      display: none;
     }
+  }
 
-    .text{
-        width: 26vw;
+  .text {
+    width: $text-width-lg;
 
-        @media (max-width: 960px) { // Adjust to your breakpoint
-            width: 90%; // Make it full width on smaller screens
-        }
+    @include mixin.respond-to(vars.$breakpoint-lg) {
+      width: $text-width-sm; // Make it full width on smaller screens
     }
+  }
 
-    .image-wrapper{
-        position: relative;
+  .image-wrapper {
+    position: relative;
+  }
+
+  .main-image {
+    width: $image-width-lg;
+
+    @include mixin.respond-to(vars.$breakpoint-lg) {
+      width: $image-width-sm;
     }
-
-    .main-image{
-        width: 29vw;
-        @media (max-width: 960px) { // Adjust to your breakpoint
-            width: 80%; // Resize image to fit smaller screens
-        }
-    }
-
-     // Media Query for smaller screens - Center all content
-     
+  }
 }

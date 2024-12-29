@@ -1,4 +1,6 @@
 @use '../base/colours' as colours;
+@use '../abstracts/mixins' as mixin;
+@use '../base/variables' as vars;
 
 footer{
     background: 
@@ -9,8 +11,17 @@ footer{
         display: flex;
         justify-content: flex-end;
         gap: 30px;
-    }
-    
 
+        @include mixin.respond-to(vars.$breakpoint-lg) {
+            text-align: center;
+            flex-direction: column;
+            margin-top: 30px;
+            padding: 0;
+        }
+    }
+    @include mixin.respond-to(vars.$breakpoint-lg) {
+        text-align: center;
+    }
+ 
 }
   
