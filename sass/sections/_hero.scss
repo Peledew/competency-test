@@ -20,6 +20,11 @@
   text-align: left;
   z-index: 1;
 
+  .note{
+    border-left: 2px solid colours.$bright-red;
+    padding-left: 30px;
+  }
+
   @include mixin.respond-to(vars.$breakpoint-lg) {
     display: none;
   }

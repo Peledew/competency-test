@@ -788,6 +788,10 @@ header {
   text-align: left;
   z-index: 1;
 }
+.hero-content .note {
+  border-left: 2px solid #FA2A2A;
+  padding-left: 30px;
+}
 @media (max-width: 960px) {
   .hero-content {
     display: none;
