@@ -1,0 +1,16 @@
+@use '../base/colours' as colours;
+
+footer{
+    background: 
+        linear-gradient(to left, colours.$black, colours.$light-black);
+    padding: 40px 60px;
+
+    .text-wrapper{
+        display: flex;
+        justify-content: flex-end;
+        gap: 30px;
+    }
+    
+
+}
+  

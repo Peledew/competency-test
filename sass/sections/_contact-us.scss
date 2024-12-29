@@ -1,0 +1,60 @@
+@use '../base/colours' as colours;
+@use '../base//variables' as vars;
+
+.contact-us{
+    background: 
+        url('/img/footer-bg.png') bottom left/contain no-repeat,
+        linear-gradient(to left, colours.$black, colours.$light-black);
+        
+    background-blend-mode: overlay;
+
+
+    .content{
+        margin: 120px 0 0 150px;
+        width: 30vw;
+    }
+
+    form{
+        padding: 30px;
+        margin-top:120px;
+        width: 510px;
+        background: colours.$dark-green;
+        .input-wrapper {
+            position: relative;
+            margin: 30px;
+
+            .message{
+                min-height: 150px;
+            }
+          }
+
+          input, textarea{
+            padding: 20px;
+            background: colours.$light-green;
+            border: 1px solid colours.$light-lime;
+            min-height: 60px;
+            min-width: 360px;
+            color: colours.$white;
+          }
+
+          textarea{
+            resize: none; /* Disable resizing */
+            word-wrap: break-word; /* Ensure long words wrap properly */
+            white-space: pre-wrap; 
+          }
+
+          textarea::placeholder, input::placeholder {
+            font-family: vars.$secondary-font;
+            font-size: 14px; 
+            color: colours.$light-gray;
+          }
+
+          button{
+            border: 1px solid colours.$light-lime;
+            background: transparent;
+            min-height: 50px;
+            min-width: 360px;
+            cursor: pointer;
+          }
+    }
+}
