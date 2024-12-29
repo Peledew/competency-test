@@ -13,18 +13,59 @@ $primary-font-weight: 700; // Bold
 $secondary-font-weight: 400; // Regular
 
 $heading-styles: (
-  "h1": (size: 48px, line-height: 58.51px),
-  "h2": (size: 40px, line-height: 48.76px),
-  "h3": (size: 28px, line-height: 34.13px),
-  "h4": (size: 20px, line-height: 24.38px),
+  "h1": (
+    size: 48px, // Default size for xl
+    line-height: 58.51px,
+    sizes-responsive: (
+      xs: 32px, // For extra small screens
+      sm: 36px, // Small screens
+      md: 42px, // Medium screens
+      lg: 46px, // Large screens
+      xl: 48px  // Extra large screens (default size)
+    )
+  ),
+  "h2": (
+    size: 40px,
+    line-height: 48.76px,
+    sizes-responsive: (
+      xs: 24px,
+      sm: 26px,
+      md: 30px,
+      lg: 36px,
+      xl: 40px
+    )
+  ),
+  "h3": (
+    size: 28px,
+    line-height: 34.13px,
+    sizes-responsive: (
+      xs: 20px,
+      sm: 22px,
+      md: 24px,
+      lg: 26px,
+      xl: 28px
+    )
+  ),
+  "h4": (
+    size: 20px,
+    line-height: 24.38px,
+    sizes-responsive: (
+      xs: 18px,
+      sm: 19px,
+      md: 20px,
+      lg: 20px,
+      xl: 20px
+    )
+  )
 );
+
 
 
 //Grid
 $breakpoints: (
   "xs": 0,
   "sm": 480px,
-  "md": 720px,
+  "md": 720px, 
   "lg": 960px,
   "xl": 1200px, 
 );

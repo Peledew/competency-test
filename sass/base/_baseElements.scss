@@ -6,9 +6,8 @@ body{
     color: colours.$dark-gray;
 }
 
-.test{
-    background-color: rgb(221, 250, 5);
-    height: 300px;
-    width: 100%;
-    border: 3px solid red;
+.container{
+    @media (max-width: 960px) { // Adjust to your breakpoint
+        text-align: center; /* Center text for all content */
+    }
 }

@@ -16,53 +16,60 @@ body {
     line-height: map.get($values, line-height);
     font-weight: vars.$primary-font-weight;
     font-family: vars.$primary-font;
+
+     // Generate media queries for responsive font sizes
+     @each $breakpoint, $width in vars.$breakpoints {
+      @media (min-width: $width) {
+        font-size: map.get(map.get($values, sizes-responsive), $breakpoint);
+      }
+    }
   }
-}
+} 
 
 h2 {
   letter-spacing: -0.02em;
 }
 
-//TODO: % koristi za extended i ispravi to svuda
+
 
 //Other text
-.primary-text {
+%primary-text {
   font-family: vars.$primary-font;
   font-weight: vars.$secondary-font-weight;
 }
 
-.secondary-text {
+%secondary-text {
   font-family: vars.$secondary-font;
   font-weight: vars.$secondary-font-weight;
 }
 
 .large-text {
-  @extend .primary-text;
+  @extend %primary-text;
   font-size: 20px;
   line-height: 30px;
 }
 
 .small-text {
-  @extend .primary-text;
+  @extend %primary-text;
   font-size: 14px;
   line-height: 26px;
 }
 
 .caption-text {
-  @extend .secondary-text;
+  @extend %secondary-text;
   font-size: 13px;
   line-height: 15.23px;
 }
 
 .cta-text{
-  @extend .secondary-text;
+  @extend %secondary-text;
   font-size: 14px;
   line-height: 16.41px;
   letter-spacing: 0.07em;
 }
 
 .title{
-  @extend .secondary-text;
+  @extend %secondary-text;
   font-size: 12px;
   line-height: 14.06px;
   letter-spacing: 0.4em;

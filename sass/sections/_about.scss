@@ -1,7 +1,6 @@
 .about{
-    margin: 105px 0;
+    margin: 6vw 0 10vw 0;
     
-
     .bg-image{
         position: absolute;
         left: 5vw;
@@ -9,10 +8,18 @@
         height: 27vw;
         width: 19vw;
         z-index: -1;
+
+        @media (max-width: 960px) { 
+            display: none;
+        }
     }
 
     .text{
-        width: 30rem;
+        width: 26vw;
+
+        @media (max-width: 960px) { // Adjust to your breakpoint
+            width: 90%; // Make it full width on smaller screens
+        }
     }
 
     .image-wrapper{
@@ -21,8 +28,11 @@
 
     .main-image{
         width: 29vw;
+        @media (max-width: 960px) { // Adjust to your breakpoint
+            width: 80%; // Resize image to fit smaller screens
+        }
     }
 
-
+     // Media Query for smaller screens - Center all content
+     
 }
-//TODO: Sredi donju marginu, zeza position absolute
