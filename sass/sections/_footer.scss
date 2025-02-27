@@ -11,7 +11,7 @@ footer{
         display: flex;
         justify-content: flex-end;
         gap: 30px;
-
+ 
         @include mixin.respond-to(vars.$breakpoint-lg) {
             text-align: center;
             flex-direction: column;

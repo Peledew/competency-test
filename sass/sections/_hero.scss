@@ -2,9 +2,12 @@
 @use '../abstracts/mixins' as mixin;
 @use '../base/variables' as vars;
 
+$hero-width: 100%;
+$hero-content-max-width: 500px;
+
 .hero {
   position: relative;
-  width: 100%;
+  width: $hero-width;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +17,7 @@
   position: absolute;
   left: 10%;
   top: 35%;
-  max-width: 500px;
+  max-width: $hero-content-max-width;
   color: white;
   padding: 20px;
   text-align: left;
